@@ -1,0 +1,1 @@
+// Type Tuple : mảng cố định
