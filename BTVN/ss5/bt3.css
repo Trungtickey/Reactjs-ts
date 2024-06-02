@@ -1,0 +1,27 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container > div {
+    width: 50%;
+  }
+  .form {
+    display: flex;
+    justify-content: space-between;
+  }
+  .form > input {
+    flex-grow: 1;
+  }
+  .button {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: red;
+    color: whitesmoke;
+  }
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+  }
