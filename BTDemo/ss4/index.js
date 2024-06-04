@@ -12,7 +12,7 @@ class studen{
         console.log("id: "+ this.id + "| name: " + this.name + "| age: " + this.age);
     }
 }
-let S1= new studen(1, "kha", 20)
+let S1= new studen(1, "trung", 20)
 console.log(S1);
 S1.prinInfo()
 

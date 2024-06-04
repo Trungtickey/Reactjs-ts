@@ -39,7 +39,7 @@ function error(message) {
 // Vòng lặp vô hạn
 function infiniteLoop() {
     while (true) {
-        console.log("Ìninite Loop");
+        console.log("Ifninite Loop");
     }
 }
 // UnKnow : Là hàm thực hiện chua xác định (giống any)
