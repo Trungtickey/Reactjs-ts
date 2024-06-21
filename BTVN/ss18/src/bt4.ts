@@ -9,7 +9,7 @@ function validate (validateFn : PredicateFn){
         // Tiến hành chỉnh sửa
         descriptor.value = (a:number, b:number)=>{
             // Kiểm tra số b
-            if(validateFn(b)){
+            if(validateFn()){
                 // Hợp lệ
                 return div(a,b);
             } else{

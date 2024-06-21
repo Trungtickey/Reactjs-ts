@@ -9,6 +9,8 @@ class ScoreBoard {
             { id: 3, name: 'Người chơi 3', score: 0 }
         ];
     }
+
+    
     // Hiển thị danh sách người chơi
     renderPlayer() {
         this.players.forEach(player => console.log(player));
@@ -40,31 +42,9 @@ class ScoreBoard {
         }
     }
 }
-
-// JavaScript để thêm người chơi mới
-document.querySelector('.add-player-button').addEventListener('click', function() {
-    var playerName = document.querySelector('.add-player-input').value;
-    if (playerName) {
-      var playerList = document.querySelector('.scoreBoard');
-      var newPlayer = document.createElement('div');
-      newPlayer.classList.add('player');
-      newPlayer.innerHTML = `
-        <span class="player-name">${playerName}</span>
-        <div class="player-score">
-          <button class="score-button add">+</button>
-          <span>0</span>
-          <button class="score-button subtract">-</button>
-        </div>
-      `;
-      playerList.appendChild(newPlayer);
-      document.querySelector('.add-player-input').value = ''; // Xóa trường nhập sau khi thêm
-    }
-  });
-
 const scoreboard = new ScoreBoard();
 scoreboard.renderPlayer();
 scoreboard.createPlayer({ id: 4, name: 'Người chơi mới', score: 0 });
 scoreboard.updatePlayer({ id: 2, name: 'Người chơi 2', score: 10 });
 scoreboard.deletePlayer(1);
 scoreboard.saveToLocalStorage(); // Lưu danh sách người chơi vào localStorage
-

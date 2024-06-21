@@ -15,7 +15,7 @@ function validate(validateFn) {
         // Tiến hành chỉnh sửa
         descriptor.value = (a, b) => {
             // Kiểm tra số b
-            if (validateFn(b)) {
+            if (validateFn()) {
                 // Hợp lệ
                 return div(a, b);
             }

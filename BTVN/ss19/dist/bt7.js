@@ -1,4 +1,5 @@
 "use strict";
+// Viết một class với decorator có thể áp dụng được nhiều hàm middlewares đến 1 hàm target. Hàm middlewares có thể truy cập đươc tham số của hàm original và định nghĩa được chúng hoặc có thể biểu diễn phương thức khác trước hoặc sau khi hàm originals được gọi
 var __runInitializers = (this && this.__runInitializers) || function (thisArg, initializers, value) {
     var useValue = arguments.length > 2;
     for (var i = 0; i < initializers.length; i++) {
@@ -33,30 +34,27 @@ var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, 
     if (target) Object.defineProperty(target, contextIn.name, descriptor);
     done = true;
 };
-function cachingDecorator(target, propertyKey, descriptor) {
-    const originalMethod = descriptor.value;
-    const cache = {};
-    descriptor.value = function (...args) {
-        const cacheKey = JSON.stringify(args);
-        if (cache[cacheKey]) {
-            console.log(`Using cached result for ${propertyKey}(${args.join(", ")})`);
-            return cache[cacheKey];
-        }
-        const result = originalMethod.apply(this, args);
-        cache[cacheKey] = result;
-        console.log(`Calculated result for ${propertyKey}(${args.join(", ")}): ${result}`);
-        return result;
+// Decorator to apply multiple middlewares to a target method
+function applyMiddlewares(...middlewares) {
+    return (target, propertyKey, descriptor) => {
+        const originalMethod = descriptor.value;
+        descriptor.value = function (...args) {
+            let result = originalMethod.apply(this, args);
+            for (const middleware of middlewares) {
+                result = middleware(result, ...args);
+            }
+            return result;
+        };
+        return descriptor;
     };
-    return descriptor;
 }
-let Example1 = (() => {
+let Example2 = (() => {
     var _a;
     let _instanceExtraInitializers = [];
-    let _add_decorators;
-    return _a = class Example1 {
-            add(a, b) {
-                console.log("Calculating sum...");
-                return a + b;
+    let _calculate_decorators;
+    return _a = class Example2 {
+            calculate(...values) {
+                return values.reduce((sum, value) => sum + value, 0);
             }
             constructor() {
                 __runInitializers(this, _instanceExtraInitializers);
@@ -64,12 +62,17 @@ let Example1 = (() => {
         },
         (() => {
             const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
-            _add_decorators = [cachingDecorator];
-            __esDecorate(_a, null, _add_decorators, { kind: "method", name: "add", static: false, private: false, access: { has: obj => "add" in obj, get: obj => obj.add }, metadata: _metadata }, null, _instanceExtraInitializers);
+            _calculate_decorators = [applyMiddlewares((original, ...args) => {
+                    console.log(`Middleware 1: Original value is ${original}`);
+                    return original + args.reduce((sum, arg) => sum + arg, 0);
+                }, (original, ...args) => {
+                    console.log(`Middleware 2: Original value is ${original}`);
+                    return original * args.length;
+                })];
+            __esDecorate(_a, null, _calculate_decorators, { kind: "method", name: "calculate", static: false, private: false, access: { has: obj => "calculate" in obj, get: obj => obj.calculate }, metadata: _metadata }, null, _instanceExtraInitializers);
             if (_metadata) Object.defineProperty(_a, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
         })(),
         _a;
 })();
-const exampleInstance1 = new Example1();
-console.log(exampleInstance1.add(2, 3)); // Output: "Calculating sum..." and then 5
-console.log(exampleInstance1.add(2, 3)); // Output: 5 (no "Calculating sum..." because the result is cached)
+const exampleInstance2 = new Example2();
+console.log(exampleInstance2.calculate(2, 3, 4));
