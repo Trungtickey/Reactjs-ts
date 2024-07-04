@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-const Products = () => {
+const Products: React.FC = () => {
   return (
     <div>
       <h1>Trang sản phẩm</h1>
