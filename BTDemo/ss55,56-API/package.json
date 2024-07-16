@@ -1,0 +1,17 @@
+{
+  "name": "ss55-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server db.json -m ./node_modules/json-server-auth --port 9999",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  }
+}
+

@@ -1,0 +1,56 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Quần Tâm Anh",
+      "price": 15,
+      "stock": 10,
+      "description": "nothing"
+    },
+    {
+      "id": 2,
+      "name": "Trung",
+      "email": "trungtickey@gmail.com",
+      "address": "59/39/18H",
+      "phone": "19001000",
+      "staues": false,
+      "createAt": "2004-03-28"
+    },
+    {
+      "id": 3,
+      "name": "Trung",
+      "email": "trungtickey@gmail.com",
+      "address": "59/39/18H",
+      "phone": "19001000",
+      "staues": false,
+      "createAt": "2004-03-28"
+    },
+    {
+      "id": 4,
+      "name": "Trung",
+      "email": "trungtickey@gmail.com",
+      "address": "59/39/18H",
+      "phone": "19001000",
+      "staues": true,
+      "createAt": "2004-03-28"
+    },
+    {
+      "id": 5,
+      "name": "Trung",
+      "email": "trungtickey@gmail.com",
+      "address": "59/39/18H",
+      "phone": "19001000",
+      "staues": true,
+      "createAt": "2004-03-28"
+    },
+    {
+      "name": "Trugn",
+      "email": "trung@gmail.com",
+      "address": "klmcjdsnc",
+      "phone": "113",
+      "staues": true,
+      "createAt": "2005-01-01",
+      "id": 6
+    }
+  ]
+}

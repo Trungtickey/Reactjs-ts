@@ -1,0 +1,31 @@
+{
+    "student":[
+        {
+            "id": 1,
+            "name": "Trung",
+            "email":"hocongthanhtrungvn@gmail.com",
+            "address": "59/39/18H",
+            "phone": "19001009",
+            "status": true,
+            "createAt": "28/03/2004"
+        },
+        {
+            "id": 2,
+            "name": "Hào",
+            "email":"nihao123@gmail.com",
+            "address": "60/40/19F",
+            "phone": "19001212",
+            "status": false,
+            "createAt": "01/01/2005"
+        },
+        {
+            "id": 3,
+            "name": "Tâm Em",
+            "email":"tamemngoo@gmail.com",
+            "address": "61/41/20G",
+            "phone": "19003456",
+            "status": "single",
+            "createAt": "02/02/2005"
+        }
+    ]
+}

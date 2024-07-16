@@ -1,0 +1,34 @@
+{
+    "user":[
+        {
+            "id": "1",
+            "name": "Hồ Trung",
+            "age": "20",
+            "major": "Student"
+        },
+        {
+            "id": "2",
+            "name": "Hồ Sang",
+            "age": "25",
+            "major": "free manager"
+        },
+        {
+            "id": "3",
+            "name": "Hồ Thành",
+            "age": "18",
+            "major": "Student"
+        },
+        {
+            "id": "4",
+            "name": "Hồ Liên",
+            "age": "18",
+            "major": "Student"
+        },
+        {
+            "id": "5",
+            "name": "Hồ Vương",
+            "age": "10",
+            "major": "Student"
+        }
+    ]
+}

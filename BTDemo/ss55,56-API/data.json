@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "name": "Quần dài nam",
+      "price": 15,
+      "stock": 10,
+      "description": "nothing"
+    },
+    {
+      "id": "3",
+      "name": "Quần Tâm Anh",
+      "price": 15,
+      "stock": 10,
+      "description": "nothing"
+    },
+    {
+      "id": "5",
+      "name": "Mũ MLB",
+      "price": 15,
+      "stock": 10,
+      "description": "nothing"
+    },
+    {
+      "id": "6",
+      "name": "Giày thể thao",
+      "price": 15,
+      "stock": 10,
+      "description": "nothing"
+    },
+    {
+      "id": "7",
+      "name": "Giày đá banh",
+      "price": 15,
+      "stock": 10,
+      "description": "nothing"
+    },
+    {
+      "id": "1",
+      "name": "Quần đùi nam",
+      "price": 15,
+      "stock": 10,
+      "description": "Quần rất đẹp"
+    }
+  ],
+  "user": [
+    
+  ]
+}

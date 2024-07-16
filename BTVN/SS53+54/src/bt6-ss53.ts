@@ -12,6 +12,7 @@ function task2(callback: () => void): void {
     }, 1500);
 }
 
+
 function task3(callback: () => void): void {
     setTimeout(() => {
         console.log('Task 3 hoàn thành sau 2 giây');
