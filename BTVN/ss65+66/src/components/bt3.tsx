@@ -1,7 +1,7 @@
 import useSelection from "antd/es/table/hooks/useSelection";
 import React from "react";
 import { useSelector } from "react-redux";
-import { StoreInterface } from "../store";
+import { StoreInterface } from "../store/bt3";
 
 const bt3 = () => {
   const product = useSelector((state: StoreInterface) => state.userStore3);
